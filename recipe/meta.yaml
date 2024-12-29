@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/airium-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/airium-{{ version }}.tar.gz
   sha256: ccab36b798b6cce3d0c5074e52ce8059f6e82991caae4985f42cadfad80b1de4
 
 build:
@@ -14,15 +14,15 @@ build:
     - airium = airium.__main__:entry_main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -32,6 +32,7 @@ test:
     - airium --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://gitlab.com/kamichal/airium
