@@ -1,5 +1,5 @@
 {% set name = "airium" %}
-{% set version = "0.2.6" %}
+{% set version = "0.2.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/airium-{{ version }}.tar.gz
-  sha256: ccab36b798b6cce3d0c5074e52ce8059f6e82991caae4985f42cadfad80b1de4
+  sha256: 6b4dd8b69838b7766179ab90078a049dc337b1da4fc0f7754f30f74d6eed706e
 
 build:
   entry_points:
     - airium = airium.__main__:entry_main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
