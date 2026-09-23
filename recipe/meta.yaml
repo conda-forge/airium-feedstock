@@ -1,13 +1,13 @@
 {% set name = "airium" %}
-{% set version = "0.2.7" %}
+{% set version = "0.3.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/airium-{{ version }}.tar.gz
-  sha256: 6b4dd8b69838b7766179ab90078a049dc337b1da4fc0f7754f30f74d6eed706e
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/airium-{{ version }}.tar.gz
+  sha256: 9052f50d4b24b3e06db09b7edfa7cc61cc6f91e702c903f0a640fc5fd1ff1574
 
 build:
   entry_points:
